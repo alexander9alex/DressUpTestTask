@@ -18,8 +18,10 @@ public static class GameComponentsLookup {
     public const int InteractionEnded = 7;
     public const int InteractionStarted = 8;
     public const int MousePosition = 9;
+    public const int Item = 10;
+    public const int Selected = 11;
 
-    public const int TotalComponents = 10;
+    public const int TotalComponents = 12;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -31,7 +33,9 @@ public static class GameComponentsLookup {
         "Input",
         "InteractionEnded",
         "InteractionStarted",
-        "MousePosition"
+        "MousePosition",
+        "Item",
+        "Selected"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -44,6 +48,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Input.Input),
         typeof(Code.Gameplay.Features.Input.InteractionEnded),
         typeof(Code.Gameplay.Features.Input.InteractionStarted),
-        typeof(Code.Gameplay.Features.Input.MousePosition)
+        typeof(Code.Gameplay.Features.Input.MousePosition),
+        typeof(Code.Gameplay.Features.Interaction.Item),
+        typeof(Code.Gameplay.Features.Interaction.Selected)
     };
 }

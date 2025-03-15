@@ -39,6 +39,7 @@ namespace Code.Gameplay.Locations.Factory
           .AddViewPrefab(_staticData.GetItemPrefab(marker.ItemId))
           .AddWorldPosition(marker.transform.position)
           .With(x => x.isInitializePosition = true)
+          .With(x => x.isItem = true)
           ;
       }
     }

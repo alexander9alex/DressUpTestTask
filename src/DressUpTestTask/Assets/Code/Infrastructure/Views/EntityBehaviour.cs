@@ -1,17 +1,19 @@
 ﻿using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Registrars;
 using UnityEngine;
+using Zenject;
 
 namespace Code.Infrastructure.Views
 {
   public class EntityBehaviour : MonoBehaviour, IEntityView
   {
-    private readonly ICollisionRegistry _collisionRegistry;
-    
+    private ICollisionRegistry _collisionRegistry;
+
     public GameEntity Entity => _entity;
     private GameEntity _entity;
 
-    public EntityBehaviour(ICollisionRegistry collisionRegistry) =>
+    [Inject]
+    private void Construct(ICollisionRegistry collisionRegistry) =>
       _collisionRegistry = collisionRegistry;
 
     public void SetEntity(GameEntity entity)
