@@ -9,20 +9,29 @@
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
-    public const int View = 1;
-    public const int ViewPrefab = 2;
+    public const int InitializePosition = 1;
+    public const int Transform = 2;
+    public const int View = 3;
+    public const int ViewPrefab = 4;
+    public const int WorldPosition = 5;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 6;
 
     public static readonly string[] componentNames = {
         "Destructed",
+        "InitializePosition",
+        "Transform",
         "View",
-        "ViewPrefab"
+        "ViewPrefab",
+        "WorldPosition"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
+        typeof(Code.Common.InitializePosition),
+        typeof(Code.Common.TransformComponent),
         typeof(Code.Common.View),
-        typeof(Code.Common.ViewPrefab)
+        typeof(Code.Common.ViewPrefab),
+        typeof(Code.Common.WorldPosition)
     };
 }

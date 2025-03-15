@@ -2,6 +2,7 @@
 using System.Linq;
 using Code.Gameplay.Locations.Configs;
 using Code.Gameplay.Locations.Data;
+using Code.Infrastructure.Views;
 using UnityEngine;
 
 namespace Code.Gameplay.Common
@@ -13,7 +14,7 @@ namespace Code.Gameplay.Common
     public void LoadAll() =>
       LoadLocations();
 
-    public GameObject GetLocationPrefab(LocationId locationId) =>
+    public EntityBehaviour GetLocationPrefab(LocationId locationId) =>
       _locationById[locationId].LocationPrefab;
 
     private void LoadLocations()

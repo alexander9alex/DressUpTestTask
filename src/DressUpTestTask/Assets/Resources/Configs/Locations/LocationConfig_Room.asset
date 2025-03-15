@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LocationConfig_Room
   m_EditorClassIdentifier: 
   LocationId: 1
-  LocationPrefab: {fileID: 5296511420905566073, guid: 06b90d7294b8b8d44b72dda99a637f27, type: 3}
+  LocationPrefab: {fileID: 5920545339144674911, guid: 06b90d7294b8b8d44b72dda99a637f27, type: 3}

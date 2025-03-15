@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Common;
+using Code.Gameplay.Locations.Factory;
 using Code.Infrastructure.Common;
 using Code.Infrastructure.Factory;
 using Code.Infrastructure.Loading;
@@ -19,6 +20,7 @@ namespace Code.Infrastructure.Installers
       BindGameFactories();
       BindGameServices();
       BindGameStateFactory();
+      BindContexts();
       BindGameStates();
       BindGameStateMachine();
     }
@@ -29,8 +31,11 @@ namespace Code.Infrastructure.Installers
     private void BindInfrastructureServices() =>
       Container.BindInterfacesAndSelfTo<BootstrapInstaller>().FromInstance(this).AsSingle();
 
-    private void BindGameFactories() =>
+    private void BindGameFactories()
+    {
       Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+      Container.Bind<ILocationFactory>().To<LocationFactory>().AsSingle();
+    }
 
     private void BindGameServices()
     {
@@ -41,6 +46,12 @@ namespace Code.Infrastructure.Installers
     private void BindGameStateFactory() =>
       Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
 
+    private void BindContexts()
+    {
+      Container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
+      Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
+    }
+
     private void BindGameStates()
     {
       Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
@@ -49,7 +60,7 @@ namespace Code.Infrastructure.Installers
     }
 
     private void BindGameStateMachine() =>
-      Container.Bind<IGameStateMachine>().To<GameStateMachine>().AsSingle();
+      Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle();
 
     public void Initialize() =>
       Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();

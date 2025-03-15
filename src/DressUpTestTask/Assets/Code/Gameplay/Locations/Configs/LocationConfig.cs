@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Locations.Data;
+using Code.Infrastructure.Views;
 using UnityEngine;
 
 namespace Code.Gameplay.Locations.Configs
@@ -7,6 +8,6 @@ namespace Code.Gameplay.Locations.Configs
   public class LocationConfig : ScriptableObject
   {
     public LocationId LocationId;
-    public GameObject LocationPrefab;
+    public EntityBehaviour LocationPrefab;
   }
 }

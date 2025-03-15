@@ -1,13 +1,47 @@
+using Code.Gameplay.Features;
+using Code.Infrastructure.Factory;
 using Code.Infrastructure.States.StateInfrastructure;
-using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
   public class GameLoopState : EndOfFrameExitState
   {
-    public override void Enter()
+    private readonly ISystemFactory _systemFactory;
+    
+    private GameplayFeature _gameplayFeature;
+    private readonly GameContext _gameContext;
+
+    public GameLoopState(ISystemFactory systemFactory, GameContext gameContext)
     {
-      Debug.Log("Game started!");
+      _systemFactory = systemFactory;
+      _gameContext = gameContext;
+    }
+
+    public override void Enter() =>
+      _gameplayFeature = _systemFactory.Create<GameplayFeature>();
+
+    protected override void Update()
+    {
+      _gameplayFeature.Execute();
+      _gameplayFeature.Cleanup();
+    }
+
+    protected override void ExitOnEndOfFrame()
+    {
+      _gameplayFeature.ClearReactiveSystems();
+      _gameplayFeature.DeactivateReactiveSystems();
+
+      DestructEntities();
+
+      _gameplayFeature.Cleanup();
+      _gameplayFeature.TearDown();
+      _gameplayFeature = null;
+    }
+
+    private void DestructEntities()
+    {
+      foreach (GameEntity entity in _gameContext.GetEntities())
+        entity.isDestructed = true;
     }
   }
 }

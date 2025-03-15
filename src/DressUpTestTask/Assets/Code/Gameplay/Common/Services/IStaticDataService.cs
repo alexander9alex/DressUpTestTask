@@ -1,11 +1,11 @@
 using Code.Gameplay.Locations.Data;
-using UnityEngine;
+using Code.Infrastructure.Views;
 
 namespace Code.Gameplay.Common
 {
   public interface IStaticDataService
   {
     void LoadAll();
-    GameObject GetLocationPrefab(LocationId locationId);
+    EntityBehaviour GetLocationPrefab(LocationId locationId);
   }
 }
