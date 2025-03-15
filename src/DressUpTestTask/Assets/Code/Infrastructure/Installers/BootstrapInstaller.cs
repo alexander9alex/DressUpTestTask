@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Common.Services;
+﻿using Code.Gameplay.Common.Collisions;
+using Code.Gameplay.Common.Services;
 using Code.Gameplay.Features.Input.Services;
 using Code.Gameplay.Locations.Factory;
 using Code.Infrastructure.Common;
@@ -44,6 +45,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
       Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
       Container.Bind<IInputService>().To<InputService>().AsSingle();
+      Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
     }
 
     private void BindGameStateFactory() =>
