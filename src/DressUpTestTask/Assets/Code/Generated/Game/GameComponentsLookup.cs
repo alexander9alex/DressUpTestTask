@@ -8,17 +8,20 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int View = 0;
-    public const int ViewPrefab = 1;
+    public const int Destructed = 0;
+    public const int View = 1;
+    public const int ViewPrefab = 2;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 3;
 
     public static readonly string[] componentNames = {
+        "Destructed",
         "View",
         "ViewPrefab"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.Destructed),
         typeof(Code.Common.View),
         typeof(Code.Common.ViewPrefab)
     };
