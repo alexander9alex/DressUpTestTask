@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.Common;
+﻿using Code.Gameplay.Common;
+using Code.Infrastructure.Common;
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
@@ -21,8 +22,11 @@ namespace Code.Infrastructure.Installers
     private void BindInfrastructureServices() =>
       Container.BindInterfacesAndSelfTo<BootstrapInstaller>().FromInstance(this).AsSingle();
 
-    private void BindGameServices() =>
+    private void BindGameServices()
+    {
       Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+      Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
+    }
 
     private void BindGameStateFactory() =>
       Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
