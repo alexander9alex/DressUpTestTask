@@ -31,6 +31,7 @@ namespace Code.Gameplay.Features.Interaction.Systems
       {
         if (entity is { isItem: true })
         {
+          entity.ReplacePositionBeforeSelecting(entity.WorldPosition);
           entity.isSelected = true;
           break;
         }

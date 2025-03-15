@@ -11,8 +11,10 @@ namespace Code.Gameplay.Features.Input
       
       Add(systems.Create<UpdateMousePositionSystem>());
       Add(systems.Create<EmitInputSystem>());
+      Add(systems.Create<SetInteractionStartedMousePositionSystem>());
       
       Add(systems.Create<CleanupInteractionStartedSystem>());
+      Add(systems.Create<CleanupInteractionStartedMousePositionSystem>());
       Add(systems.Create<CleanupInteractionEndedSystem>());
     }
   }
