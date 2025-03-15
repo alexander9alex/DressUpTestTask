@@ -1,11 +1,12 @@
-﻿using Code.Infrastructure.States.Factory;
+﻿using Code.Infrastructure.Common;
+using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
 {
-  public class BootstrapInstaller : MonoInstaller, IInitializable
+  public class BootstrapInstaller : MonoInstaller, IInitializable, ICoroutineRunner
   {
     public override void InstallBindings()
     {
@@ -17,7 +18,7 @@ namespace Code.Infrastructure.Installers
 
     private void BindInfrastructureServices() =>
       Container.BindInterfacesAndSelfTo<BootstrapInstaller>().FromInstance(this).AsSingle();
-
+    
     private void BindGameStateFactory() =>
       Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
 
