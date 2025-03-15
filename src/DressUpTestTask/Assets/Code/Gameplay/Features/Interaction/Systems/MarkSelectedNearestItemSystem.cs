@@ -30,7 +30,10 @@ namespace Code.Gameplay.Features.Interaction.Systems
       foreach (GameEntity entity in GetNearestEntities(interaction.MousePosition))
       {
         if (entity is { isItem: true })
+        {
           entity.isSelected = true;
+          break;
+        }
       }
     }
 
