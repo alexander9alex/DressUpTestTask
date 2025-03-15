@@ -8,6 +8,8 @@ namespace Code.Gameplay.Features.Interaction
     public InteractionFeature(ISystemFactory systems)
     {
       Add(systems.Create<MarkSelectedNearestItemSystem>());
+      
+      Add(systems.Create<UnselectSelectedItemsSystem>());
     }
   }
 }
