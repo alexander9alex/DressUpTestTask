@@ -1,4 +1,5 @@
 ﻿using Code.Infrastructure.Common;
+using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
@@ -11,6 +12,7 @@ namespace Code.Infrastructure.Installers
     public override void InstallBindings()
     {
       BindInfrastructureServices();
+      BindGameServices();
       BindGameStateFactory();
       BindGameStates();
       BindGameStateMachine();
@@ -18,7 +20,10 @@ namespace Code.Infrastructure.Installers
 
     private void BindInfrastructureServices() =>
       Container.BindInterfacesAndSelfTo<BootstrapInstaller>().FromInstance(this).AsSingle();
-    
+
+    private void BindGameServices() =>
+      Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+
     private void BindGameStateFactory() =>
       Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
 
