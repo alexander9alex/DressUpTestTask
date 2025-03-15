@@ -5,6 +5,7 @@ using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
+using Code.Infrastructure.Views.Factory;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -15,7 +16,7 @@ namespace Code.Infrastructure.Installers
     {
       BindInfrastructureFactories();
       BindInfrastructureServices();
-      
+      BindGameFactories();
       BindGameServices();
       BindGameStateFactory();
       BindGameStates();
@@ -27,6 +28,9 @@ namespace Code.Infrastructure.Installers
 
     private void BindInfrastructureServices() =>
       Container.BindInterfacesAndSelfTo<BootstrapInstaller>().FromInstance(this).AsSingle();
+
+    private void BindGameFactories() =>
+      Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
 
     private void BindGameServices()
     {
