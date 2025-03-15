@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.Factory;
+﻿using Code.Gameplay.Features.Input.Systems;
+using Code.Infrastructure.Factory;
 
 namespace Code.Gameplay.Features.Input
 {
@@ -6,7 +7,13 @@ namespace Code.Gameplay.Features.Input
   {
     public InputFeature(ISystemFactory systems)
     {
-      Add(systems.Create<StartInputSystem>());
+      Add(systems.Create<InitializeInputSystem>());
+      
+      Add(systems.Create<UpdateMousePositionSystem>());
+      Add(systems.Create<EmitInputSystem>());
+      
+      Add(systems.Create<CleanupInteractionStartedSystem>());
+      Add(systems.Create<CleanupInteractionEndedSystem>());
     }
   }
 }

@@ -14,8 +14,12 @@ public static class GameComponentsLookup {
     public const int View = 3;
     public const int ViewPrefab = 4;
     public const int WorldPosition = 5;
+    public const int Input = 6;
+    public const int InteractionEnded = 7;
+    public const int InteractionStarted = 8;
+    public const int MousePosition = 9;
 
-    public const int TotalComponents = 6;
+    public const int TotalComponents = 10;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -23,7 +27,11 @@ public static class GameComponentsLookup {
         "Transform",
         "View",
         "ViewPrefab",
-        "WorldPosition"
+        "WorldPosition",
+        "Input",
+        "InteractionEnded",
+        "InteractionStarted",
+        "MousePosition"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -32,6 +40,10 @@ public static class GameComponentsLookup {
         typeof(Code.Common.TransformComponent),
         typeof(Code.Common.View),
         typeof(Code.Common.ViewPrefab),
-        typeof(Code.Common.WorldPosition)
+        typeof(Code.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Input.Input),
+        typeof(Code.Gameplay.Features.Input.InteractionEnded),
+        typeof(Code.Gameplay.Features.Input.InteractionStarted),
+        typeof(Code.Gameplay.Features.Input.MousePosition)
     };
 }

@@ -17,8 +17,11 @@ namespace Code.Infrastructure.States.GameStates
       _gameContext = gameContext;
     }
 
-    public override void Enter() =>
+    public override void Enter()
+    {
       _gameplayFeature = _systemFactory.Create<GameplayFeature>();
+      _gameplayFeature.Initialize();
+    }
 
     protected override void Update()
     {

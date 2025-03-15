@@ -21,6 +21,7 @@ namespace Code.Infrastructure.Installers
       BindGameFactories();
       BindGameServices();
       BindGameStateFactory();
+      BindGameInput();
       BindContexts();
       BindGameStates();
       BindGameStateMachine();
@@ -47,6 +48,9 @@ namespace Code.Infrastructure.Installers
 
     private void BindGameStateFactory() =>
       Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
+
+    private void BindGameInput() =>
+      Container.BindInterfacesAndSelfTo<GameInput>().AsSingle();
 
     private void BindContexts()
     {

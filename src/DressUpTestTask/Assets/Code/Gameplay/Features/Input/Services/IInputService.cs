@@ -1,9 +1,13 @@
+using System.Collections.Generic;
+using Code.Gameplay.Features.Input.Commands;
+using UnityEngine;
+
 namespace Code.Gameplay.Features.Input.Services
 {
   public interface IInputService
   {
-    void StartInput();
-    void StopInput();
-    
+    List<InputCommand> GetInputCommands();
+    void ResetInputCommands();
+    Vector2 GetMousePosition();
   }
 }
