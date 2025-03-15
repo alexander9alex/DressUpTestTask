@@ -1,5 +1,5 @@
-﻿using Code.Gameplay.Common;
-using Code.Gameplay.Common.Services;
+﻿using Code.Gameplay.Common.Services;
+using Code.Gameplay.Features.Input.Services;
 using Code.Gameplay.Locations.Factory;
 using Code.Infrastructure.Common;
 using Code.Infrastructure.Factory;
@@ -42,6 +42,7 @@ namespace Code.Infrastructure.Installers
     {
       Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
       Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
+      Container.Bind<IInputService>().To<InputService>().AsSingle();
     }
 
     private void BindGameStateFactory() =>
