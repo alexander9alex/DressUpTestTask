@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace Code.Gameplay.Zones
 {
-  public class FloorZone : MonoBehaviour
+  public class CantLocateZone : MonoBehaviour
   {
     private void OnTriggerEnter2D(Collider2D other)
     {
       if (!other.gameObject.TryGetComponent(out IEntityView entityView))
         return;
 
-      entityView.Entity.isOnTheFloor = true;
+      entityView.Entity.isInCantLocateZone = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -18,7 +18,7 @@ namespace Code.Gameplay.Zones
       if (!other.gameObject.TryGetComponent(out IEntityView entityView))
         return;
 
-      entityView.Entity.isOnTheFloor = false;
+      entityView.Entity.isInCantLocateZone = false;
     }
   }
 }
