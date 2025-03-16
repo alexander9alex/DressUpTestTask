@@ -21,7 +21,8 @@ namespace Code.Gameplay.Features.Interaction.Systems
         .AllOf(
           GameMatcher.Item,
           GameMatcher.Selected
-        ));
+        )
+        .NoneOf(GameMatcher.InCanLocateZone));
     }
 
     public void Execute()
