@@ -7,18 +7,18 @@ namespace Code.Gameplay.Zones
   {
     private void OnTriggerEnter2D(Collider2D other)
     {
-      if (!other.gameObject.TryGetComponent(out IEntityView entityView))
+      if (!other.gameObject.TryGetComponent(out LinkToEntityBehaviour linkToEntityBehaviour))
         return;
 
-      entityView.Entity.isOnTheFloor = true;
+      linkToEntityBehaviour.EntityBehaviour.Entity.isOnTheFloor = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-      if (!other.gameObject.TryGetComponent(out IEntityView entityView))
+      if (!other.gameObject.TryGetComponent(out LinkToEntityBehaviour linkToEntityBehaviour))
         return;
 
-      entityView.Entity.isOnTheFloor = false;
+      linkToEntityBehaviour.EntityBehaviour.Entity.isOnTheFloor = false;
     }
   }
 }

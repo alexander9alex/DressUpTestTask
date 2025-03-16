@@ -8,7 +8,7 @@ namespace Code.Gameplay.Features.Interaction.Systems
   public class MarkSelectedNearestItemSystem : IExecuteSystem
   {
     private const float TouchRadius = 0.05f;
-    private readonly int _itemsLayerMask = LayerMask.GetMask("Item");
+    private readonly int _itemsLayerMask = LayerMask.GetMask("Selecting");
 
     private readonly IPhysicsService _physicsService;
     private readonly IGroup<GameEntity> _interactions;

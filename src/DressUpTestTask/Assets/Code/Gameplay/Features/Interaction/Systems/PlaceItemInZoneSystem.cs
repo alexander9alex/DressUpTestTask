@@ -3,13 +3,13 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Interaction.Systems
 {
-  public class ContinueFallingSystem : IExecuteSystem
+  public class PlaceItemInZoneSystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _interactions;
     private readonly IGroup<GameEntity> _items;
     private readonly List<GameEntity> _buffer = new(1);
 
-    public ContinueFallingSystem(GameContext game)
+    public PlaceItemInZoneSystem(GameContext game)
     {
       _interactions = game.GetGroup(GameMatcher
         .AllOf(
@@ -20,8 +20,9 @@ namespace Code.Gameplay.Features.Interaction.Systems
       _items = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Item,
-          GameMatcher.Selected
-        ));
+          GameMatcher.Selected,
+          GameMatcher.InCanPlaceItemZone
+        ).NoneOf(GameMatcher.InCantPlaceItemZone));
     }
 
     public void Execute()
@@ -29,7 +30,7 @@ namespace Code.Gameplay.Features.Interaction.Systems
       foreach (GameEntity _ in _interactions)
       foreach (GameEntity item in _items.GetEntities(_buffer))
       {
-        item.isFalling = true;
+        item.isFalling = false;
       }
     }
   }

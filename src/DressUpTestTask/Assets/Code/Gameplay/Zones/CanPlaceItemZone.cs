@@ -7,18 +7,18 @@ namespace Code.Gameplay.Zones
   {
     private void OnTriggerEnter2D(Collider2D other)
     {
-      if (!other.gameObject.TryGetComponent(out IEntityView entityView))
+      if (!other.gameObject.TryGetComponent(out LinkToEntityBehaviour linkToEntityBehaviour))
         return;
 
-      entityView.Entity.isInCanPlaceItemZone = true;
+      linkToEntityBehaviour.EntityBehaviour.Entity.isInCanPlaceItemZone = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-      if (!other.gameObject.TryGetComponent(out IEntityView entityView))
+      if (!other.gameObject.TryGetComponent(out LinkToEntityBehaviour linkToEntityBehaviour))
         return;
 
-      entityView.Entity.isInCanPlaceItemZone = false;
+      linkToEntityBehaviour.EntityBehaviour.Entity.isInCanPlaceItemZone = false;
     }
   }
 }

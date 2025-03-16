@@ -10,6 +10,7 @@ namespace Code.Gameplay.Features.Interaction
       Add(systems.Create<MarkSelectedNearestItemSystem>());
       
       Add(systems.Create<ContinueFallingSystem>());
+      Add(systems.Create<PlaceItemInZoneSystem>());
       Add(systems.Create<UnselectSelectedItemsSystem>());
     }
   }
