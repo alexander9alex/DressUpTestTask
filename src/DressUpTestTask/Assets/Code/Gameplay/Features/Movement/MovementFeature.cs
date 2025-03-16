@@ -8,6 +8,8 @@ namespace Code.Gameplay.Features.Movement
     public MovementFeature(ISystemFactory systems)
     {
       Add(systems.Create<MoveSelectedItemSystem>());
+      Add(systems.Create<MoveDownFallingSystem>());
+      
       Add(systems.Create<UpdateTransformPositionSystem>());
     }
   }
