@@ -11,7 +11,7 @@ namespace Code.Gameplay.Zones
       if (!other.gameObject.TryGetComponent(out IEntityView entityView))
         return;
 
-      entityView.Entity.With(x => x.isFalling = false);
+      entityView.Entity.isOnTheFloor = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -19,7 +19,7 @@ namespace Code.Gameplay.Zones
       if (!other.gameObject.TryGetComponent(out IEntityView entityView))
         return;
 
-      entityView.Entity.With(x => x.isFalling = true);
+      entityView.Entity.isOnTheFloor = false;
     }
   }
 }

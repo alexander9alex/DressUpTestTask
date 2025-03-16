@@ -21,10 +21,13 @@ public static class GameComponentsLookup {
     public const int MousePosition = 10;
     public const int Item = 11;
     public const int Selected = 12;
-    public const int Falling = 13;
-    public const int PositionBeforeSelecting = 14;
+    public const int CanLocate = 13;
+    public const int CantLocate = 14;
+    public const int Falling = 15;
+    public const int OnTheFloor = 16;
+    public const int PositionBeforeSelecting = 17;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 18;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -40,7 +43,10 @@ public static class GameComponentsLookup {
         "MousePosition",
         "Item",
         "Selected",
+        "CanLocate",
+        "CantLocate",
         "Falling",
+        "OnTheFloor",
         "PositionBeforeSelecting"
     };
 
@@ -58,7 +64,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Input.MousePosition),
         typeof(Code.Gameplay.Features.Interaction.Item),
         typeof(Code.Gameplay.Features.Interaction.Selected),
+        typeof(Code.Gameplay.Features.Movement.CanLocate),
+        typeof(Code.Gameplay.Features.Movement.CantLocate),
         typeof(Code.Gameplay.Features.Movement.Falling),
+        typeof(Code.Gameplay.Features.Movement.OnTheFloor),
         typeof(Code.Gameplay.Features.Movement.PositionBeforeSelecting)
     };
 }

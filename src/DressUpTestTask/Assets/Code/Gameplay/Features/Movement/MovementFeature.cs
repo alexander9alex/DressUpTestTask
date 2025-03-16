@@ -7,6 +7,8 @@ namespace Code.Gameplay.Features.Movement
   {
     public MovementFeature(ISystemFactory systems)
     {
+      Add(systems.Create<StopFallingIfOnTheFloorSystem>());
+      
       Add(systems.Create<MoveSelectedItemSystem>());
       Add(systems.Create<MoveDownFallingSystem>());
       
