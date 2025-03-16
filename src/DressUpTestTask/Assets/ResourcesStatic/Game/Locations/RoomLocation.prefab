@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 2131165761402363636}
   - component: {fileID: 1136878721681178070}
   m_Layer: 0
-  m_Name: CantLocate (6)
+  m_Name: CantPlaceItemZone (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 1907632979056013921}
   - component: {fileID: 8671360416494339927}
   m_Layer: 0
-  m_Name: CanLocate (4)
+  m_Name: CanPlaceItemZone (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 1807235048289151473}
   - component: {fileID: 6304876563925366594}
   m_Layer: 0
-  m_Name: CanLocate (1)
+  m_Name: CanPlaceItemZone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 6707898730356181602}
   - component: {fileID: 4346881212671243760}
   m_Layer: 0
-  m_Name: CantLocate (4)
+  m_Name: CantPlaceItemZone (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 3659876908145643079}
   - component: {fileID: 9093685594749658637}
   m_Layer: 0
-  m_Name: CanLocate (2)
+  m_Name: CanPlaceItemZone (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 5871509663931996812}
   - component: {fileID: 8444283598720572276}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: FloorZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,7 +823,7 @@ GameObject:
   - component: {fileID: 6359076021040606903}
   - component: {fileID: 7216724439782953055}
   m_Layer: 0
-  m_Name: CanLocate (3)
+  m_Name: CanPlaceItemZone (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 4067268313477229546}
   - component: {fileID: 8670047533723967960}
   m_Layer: 0
-  m_Name: CanLocate (6)
+  m_Name: CanPlaceItemZone (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 7250324812393675753}
   - component: {fileID: 9023848122411163815}
   m_Layer: 0
-  m_Name: CantLocate (1)
+  m_Name: CantPlaceItemZone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 6005694829014934500}
   - component: {fileID: 4818513947544548575}
   m_Layer: 0
-  m_Name: CantLocate (2)
+  m_Name: CantPlaceItemZone (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1321,7 +1321,7 @@ GameObject:
   - component: {fileID: 1734769145662582251}
   - component: {fileID: 6280289279717495109}
   m_Layer: 0
-  m_Name: CantLocate (3)
+  m_Name: CantPlaceItemZone (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1426,7 +1426,7 @@ GameObject:
   - component: {fileID: 776648721324836910}
   - component: {fileID: 6247235124767070610}
   m_Layer: 0
-  m_Name: CanLocate (5)
+  m_Name: CanPlaceItemZone (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1609,7 +1609,7 @@ GameObject:
   - component: {fileID: 5580548649512753172}
   - component: {fileID: 4629272966669413168}
   m_Layer: 0
-  m_Name: CanLocate
+  m_Name: CanPlaceItemZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 5483939025634710208}
   - component: {fileID: 3857555588918768906}
   m_Layer: 0
-  m_Name: CantLocate
+  m_Name: CantPlaceItemZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1839,7 +1839,7 @@ GameObject:
   - component: {fileID: 8974822327714230258}
   - component: {fileID: 2458397721027387432}
   m_Layer: 0
-  m_Name: CantLocate (5)
+  m_Name: CantPlaceItemZone (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

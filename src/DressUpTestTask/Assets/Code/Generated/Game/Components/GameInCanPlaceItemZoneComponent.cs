@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherInCanLocateZone;
+    static Entitas.IMatcher<GameEntity> _matcherInCanPlaceItemZone;
 
-    public static Entitas.IMatcher<GameEntity> InCanLocateZone {
+    public static Entitas.IMatcher<GameEntity> InCanPlaceItemZone {
         get {
-            if (_matcherInCanLocateZone == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.InCanLocateZone);
+            if (_matcherInCanPlaceItemZone == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.InCanPlaceItemZone);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherInCanLocateZone = matcher;
+                _matcherInCanPlaceItemZone = matcher;
             }
 
-            return _matcherInCanLocateZone;
+            return _matcherInCanPlaceItemZone;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.InCanLocateZone inCanLocateZoneComponent = new Code.Gameplay.Features.Movement.InCanLocateZone();
+    static readonly Code.Gameplay.Features.Movement.InCanPlaceItemZone inCanPlaceItemZoneComponent = new Code.Gameplay.Features.Movement.InCanPlaceItemZone();
 
-    public bool isInCanLocateZone {
-        get { return HasComponent(GameComponentsLookup.InCanLocateZone); }
+    public bool isInCanPlaceItemZone {
+        get { return HasComponent(GameComponentsLookup.InCanPlaceItemZone); }
         set {
-            if (value != isInCanLocateZone) {
-                var index = GameComponentsLookup.InCanLocateZone;
+            if (value != isInCanPlaceItemZone) {
+                var index = GameComponentsLookup.InCanPlaceItemZone;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : inCanLocateZoneComponent;
+                            : inCanPlaceItemZoneComponent;
 
                     AddComponent(index, component);
                 } else {

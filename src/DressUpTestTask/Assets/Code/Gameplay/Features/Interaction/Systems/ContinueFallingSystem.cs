@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Interaction.Systems
           GameMatcher.Item,
           GameMatcher.Selected
         )
-        .NoneOf(GameMatcher.InCanLocateZone));
+        .NoneOf(GameMatcher.InCanPlaceItemZone));
     }
 
     public void Execute()

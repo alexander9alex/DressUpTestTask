@@ -18,8 +18,8 @@ namespace Code.Gameplay.Features.Movement
         )
         .NoneOf(
           GameMatcher.Selected,
-          GameMatcher.InCanLocateZone,
-          GameMatcher.InCantLocateZone
+          GameMatcher.InCanPlaceItemZone,
+          GameMatcher.InCantPlaceItemZone
         ));
     }
 

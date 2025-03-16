@@ -22,8 +22,8 @@ public static class GameComponentsLookup {
     public const int Item = 11;
     public const int Selected = 12;
     public const int Falling = 13;
-    public const int InCanLocateZone = 14;
-    public const int InCantLocateZone = 15;
+    public const int InCanPlaceItemZone = 14;
+    public const int InCantPlaceItemZone = 15;
     public const int OnTheFloor = 16;
     public const int PositionBeforeSelecting = 17;
 
@@ -44,8 +44,8 @@ public static class GameComponentsLookup {
         "Item",
         "Selected",
         "Falling",
-        "InCanLocateZone",
-        "InCantLocateZone",
+        "InCanPlaceItemZone",
+        "InCantPlaceItemZone",
         "OnTheFloor",
         "PositionBeforeSelecting"
     };
@@ -65,8 +65,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Interaction.Item),
         typeof(Code.Gameplay.Features.Interaction.Selected),
         typeof(Code.Gameplay.Features.Movement.Falling),
-        typeof(Code.Gameplay.Features.Movement.InCanLocateZone),
-        typeof(Code.Gameplay.Features.Movement.InCantLocateZone),
+        typeof(Code.Gameplay.Features.Movement.InCanPlaceItemZone),
+        typeof(Code.Gameplay.Features.Movement.InCantPlaceItemZone),
         typeof(Code.Gameplay.Features.Movement.OnTheFloor),
         typeof(Code.Gameplay.Features.Movement.PositionBeforeSelecting)
     };
