@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.Movement
 {
   public class MoveDownFallingSystem : IExecuteSystem
   {
-    private const float FallingSpeed = 5f;
+    private const float FallingSpeed = 9.81f;
 
     private readonly IGroup<GameEntity> _falling;
 
@@ -17,7 +17,8 @@ namespace Code.Gameplay.Features.Movement
         .AllOf(
           GameMatcher.Falling,
           GameMatcher.WorldPosition
-        ));
+        )
+        .NoneOf(GameMatcher.Selected));
     }
 
     public void Execute()
